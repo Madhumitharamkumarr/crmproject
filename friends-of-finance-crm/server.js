@@ -168,7 +168,11 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Start server
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 Friends of Finance CRM running at http://localhost:${PORT}`);
-});
+// Start server (only if run directly, not imported in Vercel serverless context)
+if (process.env.NODE_ENV !== 'production' || require.main === module) {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🚀 Friends of Finance CRM running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
