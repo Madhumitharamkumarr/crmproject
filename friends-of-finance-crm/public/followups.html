@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Follow-ups — Friends of Finance CRM</title>
+  <meta name="description" content="Members requiring follow-up attention in the Friends of Finance community. Fictional demo data." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar" id="topbar"></header>
+
+    <main class="page-content">
+      <div class="page-header">
+        <h1>Follow-ups</h1>
+        <p>Members needing attention — Newly Joined, At Risk, and Dormant members.</p>
+      </div>
+
+      <div class="alert alert-info" style="margin-bottom:20px;">
+        <strong>Priority Order Note:</strong> The priority order shown below (Dormant → At Risk → Newly Joined)
+        is a workflow choice made for this demonstration, not an official Friends of Finance rule.
+        Community managers should exercise their own judgement.
+      </div>
+
+      <div id="followup-content">
+        <div class="loading-overlay"><div class="spinner"></div> Loading follow-ups…</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/followups.js"></script>
+</body>
+</html>

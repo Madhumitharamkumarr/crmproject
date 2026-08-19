@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members — Friends of Finance CRM</title>
+  <meta name="description" content="View and manage all fictional member records in the Friends of Finance Community CRM." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar" id="topbar"></header>
+
+    <main class="page-content">
+      <div class="page-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+        <div>
+          <h1>Members</h1>
+          <p>Search, filter, and manage all community members.</p>
+        </div>
+        <button class="btn btn-primary" id="btn-add-member" onclick="openAddModal()">
+          + Add Member
+        </button>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-group" style="flex:1;min-width:200px;">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search name, role, company…" oninput="filterMembers()" />
+        </div>
+        <select id="filter-state" onchange="filterMembers()">
+          <option value="">All States</option>
+          <option value="Newly Joined">Newly Joined</option>
+          <option value="Active">Active</option>
+          <option value="Highly Active">Highly Active</option>
+          <option value="At Risk">At Risk</option>
+          <option value="Dormant">Dormant</option>
+        </select>
+        <select id="filter-space" onchange="filterMembers()">
+          <option value="">All Spaces</option>
+          <option value="Ask Finance Peers">Ask Finance Peers</option>
+          <option value="Finance Workflows">Finance Workflows</option>
+          <option value="Tools &amp; Systems">Tools &amp; Systems</option>
+          <option value="Career &amp; Compensation">Career &amp; Compensation</option>
+          <option value="Water Cooler">Water Cooler</option>
+          <option value="Interviews &amp; Stories">Interviews &amp; Stories</option>
+          <option value="Curated Jobs">Curated Jobs</option>
+        </select>
+        <select id="filter-owner" onchange="filterMembers()">
+          <option value="">All Owners</option>
+          <option value="Sarah Bennett">Sarah Bennett</option>
+          <option value="Marcus Liu">Marcus Liu</option>
+          <option value="Unassigned">Unassigned</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" onclick="clearFilters()">Clear</button>
+      </div>
+
+      <!-- Members Table -->
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div id="members-table-container">
+          <div class="loading-overlay"><div class="spinner"></div> Loading members…</div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Member Modal -->
+  <div class="modal-overlay" id="add-modal" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add New Member</h3>
+        <button class="modal-close" onclick="closeAddModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-info" style="margin-bottom:16px;">
+          All member data entered here is fictional demo data for academic purposes only.
+        </div>
+        <form id="add-member-form" class="form-grid" onsubmit="submitAddMember(event)">
+          <div class="form-group">
+            <label for="add-name">Full Name *</label>
+            <input type="text" id="add-name" placeholder="e.g. Ananya Rao" required />
+          </div>
+          <div class="form-group">
+            <label for="add-role">Role / Title *</label>
+            <input type="text" id="add-role" placeholder="e.g. FP&A Manager" required />
+          </div>
+          <div class="form-group">
+            <label for="add-company">Company *</label>
+            <input type="text" id="add-company" placeholder="e.g. Northstar Analytics" required />
+          </div>
+          <div class="form-group">
+            <label for="add-email">Email *</label>
+            <input type="email" id="add-email" placeholder="e.g. ananya@company.example" required />
+          </div>
+          <div class="form-group">
+            <label for="add-joined">Joined Date *</label>
+            <input type="date" id="add-joined" required />
+          </div>
+          <div class="form-group">
+            <label for="add-owner">Owner</label>
+            <select id="add-owner">
+              <option value="Unassigned">Unassigned</option>
+              <option value="Sarah Bennett">Sarah Bennett</option>
+              <option value="Marcus Liu">Marcus Liu</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="add-next-action">Next Action</label>
+            <input type="text" id="add-next-action" placeholder="e.g. Send welcome message" />
+          </div>
+          <div class="form-group full-width">
+            <label for="add-notes">Notes</label>
+            <textarea id="add-notes" rows="3" placeholder="Any internal notes about this member…"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeAddModal()">Cancel</button>
+        <button class="btn btn-primary" id="add-submit-btn" onclick="submitAddMember(event)">Save Member</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/members.js"></script>
+</body>
+</html>

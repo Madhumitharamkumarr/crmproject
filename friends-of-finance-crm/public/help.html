@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help & Testing — Friends of Finance CRM</title>
+  <meta name="description" content="Help documentation and testing instructions for the Friends of Finance Community CRM. Academic assignment." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar" id="topbar"></header>
+
+    <main class="page-content">
+      <div class="page-header">
+        <h1>Help &amp; Testing Guide</h1>
+        <p>Documentation, rules, safeguards, and testing instructions for this academic assignment.</p>
+      </div>
+
+      <div class="alert alert-warning" style="margin-bottom:24px;">
+        <strong>⚠ Fictional Demo Data Notice</strong><br>
+        All member names, companies, roles, and activity records in this application are entirely fictional.
+        They are created for academic demonstration purposes only and do not represent real people,
+        real Friends of Finance members, or actual community activity.
+        Commercial intent must not be inferred from community activity.
+      </div>
+
+      <!-- 1. Purpose -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>1. Purpose of this CRM</h2>
+        <p>
+          This is an academic assignment project: a CRM-style dashboard designed for a fictional community manager
+          to track and manage member activity in <strong>Friends of Finance</strong> — a professional community for
+          finance and accounting practitioners.
+        </p>
+        <p style="margin-top:8px;">The CRM allows a community manager to:</p>
+        <ul>
+          <li>View a community overview dashboard with key performance indicators</li>
+          <li>View, add, and edit fictional member records</li>
+          <li>Record member activities in relevant community spaces</li>
+          <li>Automatically classify members by activity state</li>
+          <li>Identify members needing follow-up attention</li>
+          <li>Use simulated AI-assisted next-step suggestions (with mandatory human review)</li>
+        </ul>
+      </div>
+
+      <!-- 2. Technology -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>2. Technology Used</h2>
+        <ul>
+          <li><strong>Frontend:</strong> HTML5, CSS3, Vanilla JavaScript</li>
+          <li><strong>Backend:</strong> Node.js + Express.js</li>
+          <li><strong>Database:</strong> MongoDB + Mongoose</li>
+          <li><strong>Charts:</strong> Chart.js (CDN)</li>
+          <li><strong>Fonts:</strong> Google Fonts — Inter</li>
+          <li><strong>Hosting:</strong> Deployable to Render (or similar)</li>
+        </ul>
+      </div>
+
+      <!-- 3. Fictional Data Disclaimer -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>3. Fictional Data Disclaimer</h2>
+        <p>
+          All member names, companies, roles, email addresses, and activity descriptions in this application
+          are entirely fictional and created solely for academic demonstration purposes.
+        </p>
+        <p style="margin-top:8px;">Specifically:</p>
+        <ul>
+          <li>No real people's information is used.</li>
+          <li>No real Friends of Finance members are represented.</li>
+          <li>No actual Friends of Finance community activity is shown.</li>
+          <li>No claim is made that this data represents real community behaviour.</li>
+          <li>Commercial intent must not be inferred from any community activity shown.</li>
+          <li>This application is not affiliated with any real organisation named Friends of Finance.</li>
+        </ul>
+      </div>
+
+      <!-- 4. Activity State Rules -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>4. Activity State Rules</h2>
+        <p>
+          The following CRM rules were created specifically for this assignment.
+          They are <strong>not</strong> claimed to be official Friends of Finance activity classification rules.
+          All states are calculated automatically from the member's joined date and activity history.
+          Commercial signals are <strong>never</strong> used in state calculations.
+        </p>
+        <table style="margin-top:16px;width:100%;">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Rule</th>
+              <th>Badge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Newly Joined</strong></td>
+              <td>Member joined within the last 7 days</td>
+              <td><span class="badge badge-newly">🔵 Newly Joined</span></td>
+            </tr>
+            <tr>
+              <td><strong>Highly Active</strong></td>
+              <td>5 or more meaningful activities in the last 14 days</td>
+              <td><span class="badge badge-highly">🟣 Highly Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>Active</strong></td>
+              <td>2 to 4 meaningful activities in the last 14 days</td>
+              <td><span class="badge badge-active">🟢 Active</span></td>
+            </tr>
+            <tr>
+              <td><strong>At Risk</strong></td>
+              <td>No meaningful activity for 15 to 30 days</td>
+              <td><span class="badge badge-risk">🟠 At Risk</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dormant</strong></td>
+              <td>No meaningful activity for more than 30 days</td>
+              <td><span class="badge badge-dormant">🔴 Dormant</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="form-help" style="margin-top:12px;">
+          Note: "Newly Joined" takes priority over all other states. Activity state is computed dynamically on every request.
+        </p>
+      </div>
+
+      <!-- 5. Community Spaces -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>5. Community Spaces</h2>
+        <p>The following fictional community spaces are used in activity records:</p>
+        <ul>
+          <li><strong>Ask Finance Peers</strong> — Peer Q&amp;A and advice</li>
+          <li><strong>Finance Workflows</strong> — Process and workflow discussions</li>
+          <li><strong>Tools &amp; Systems</strong> — Finance tools and technology</li>
+          <li><strong>Career &amp; Compensation</strong> — Career development and pay</li>
+          <li><strong>Water Cooler</strong> — Informal community discussions</li>
+          <li><strong>Interviews &amp; Stories</strong> — Member stories and spotlights</li>
+          <li><strong>Curated Jobs</strong> — Job listings and opportunities</li>
+        </ul>
+      </div>
+
+      <!-- 6. AI Feature -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>6. AI Feature Explanation</h2>
+        <p>
+          The <strong>AI Suggested Next Step</strong> feature on the Member Detail page generates a suggested action
+          for the community manager to consider.
+        </p>
+        <h3>How it works</h3>
+        <p>
+          This AI feature is <strong>fully simulated</strong> for this assignment using rule-based JavaScript logic.
+          It does not call any paid external AI API.
+          The suggestion is generated by analysing:
+        </p>
+        <ul>
+          <li>The member's current activity state</li>
+          <li>Their most active community space</li>
+          <li>Their recent activity types (questions, posts, etc.)</li>
+          <li>Their role and engagement history</li>
+        </ul>
+        <h3>Example outputs</h3>
+        <ul>
+          <li>Newly Joined → Suggest a welcome/check-in action</li>
+          <li>Highly Active → Acknowledge contributions; invite to discussions</li>
+          <li>Active, asks questions → Suggest relevant peer resources</li>
+          <li>At Risk → Recommend reviewing history before any outreach</li>
+          <li>Dormant → Recommend careful human review before any action</li>
+        </ul>
+      </div>
+
+      <!-- 7. AI Safeguards -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>7. AI Safeguards</h2>
+        <div class="alert alert-danger" style="margin-bottom:16px;">
+          The AI feature includes the following mandatory safeguards displayed on every recommendation:
+        </div>
+        <ul>
+          <li>✓ AI recommendation is simulated for this assignment. It uses rule-based logic, not a paid AI API.</li>
+          <li>✓ AI does not send messages automatically. Human review is always required.</li>
+          <li>✓ AI does not invent personalisation or access external data.</li>
+          <li>✓ Community activity must NOT be treated as commercial intent.</li>
+          <li>✓ AI does not infer buying intent. No member is labelled as a sales lead.</li>
+        </ul>
+        <p style="margin-top:12px;">
+          The AI will never say: "This member is likely to buy", "This member is a sales lead", or make any commercial inference.
+        </p>
+      </div>
+
+      <!-- 8. Commercial Signal Safeguards -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>8. Commercial Signal Safeguards</h2>
+        <p>
+          The <strong>Commercial Signal</strong> field is an optional field with two possible values:
+          <em>Not assessed</em> (default) and <em>Requires human review</em>.
+        </p>
+        <p style="margin-top:8px;">This field is:</p>
+        <ul>
+          <li>Completely separate from activity scoring</li>
+          <li>Not used in activity state calculation</li>
+          <li>Not used in engagement ranking</li>
+          <li>Not used in AI suggestion generation</li>
+          <li>Clearly displayed as separate from community engagement</li>
+        </ul>
+        <p style="margin-top:8px;">
+          Community engagement and commercial assessment are treated as entirely separate concerns in this CRM.
+        </p>
+      </div>
+
+      <!-- 9. Testing Instructions -->
+      <div class="help-section card" style="margin-bottom:20px;">
+        <h2>9. Testing Instructions</h2>
+        <p style="margin-bottom:16px;">
+          Use the following tests to verify all CRM features work correctly.
+          All tests should be performed with the fictional demo data.
+        </p>
+
+        <div class="test-step">
+          <div class="test-label">Test 1 — Add a New Member</div>
+          <p>Go to <strong>Members → Add Member</strong>. Fill in name, role, company, email, and set today's date as the joined date. Submit the form.</p>
+          <div class="expected">Expected: Member appears in the Members table. Activity state is "Newly Joined" because joined date is within 7 days.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 2 — Become Highly Active</div>
+          <p>View any member. Click <strong>Add Activity</strong> and add 5 activities, all with dates within the last 14 days.</p>
+          <div class="expected">Expected: Member's activity state updates to "Highly Active" after adding the 5th recent activity.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 3 — Become Active</div>
+          <p>View a member. Add exactly 2 activities with dates within the last 14 days.</p>
+          <div class="expected">Expected: Member's activity state becomes "Active" (2–4 activities in 14 days).</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 4 — At Risk Classification</div>
+          <p>Check a member such as Rahul Mehta or Meera Krishnan in the seed data. Their most recent activity is 15–30 days ago.</p>
+          <div class="expected">Expected: Member shows "At Risk" state in the Members table and the At Risk focused view.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 5 — Dormant Classification</div>
+          <p>Check a member such as Arjun Shah or Neha Iyer in the seed data. Their most recent activity is over 30 days ago.</p>
+          <div class="expected">Expected: Member shows "Dormant" state and appears in Dormant focused view and Follow-ups.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 6 — Search Members</div>
+          <p>Go to <strong>Members</strong>. Type a name (e.g. "Ananya") in the search box.</p>
+          <div class="expected">Expected: Only Ananya Rao appears in the results. Other members are filtered out.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 7 — Filter by Activity State</div>
+          <p>Go to <strong>Members</strong>. Select "Highly Active" from the Activity State filter dropdown.</p>
+          <div class="expected">Expected: Only members with "Highly Active" state are displayed in the table.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 8 — Add an Activity</div>
+          <p>View any member. Click <strong>Add Activity</strong>. Fill in all fields and submit.</p>
+          <div class="expected">Expected: Activity appears in the member's history. Last activity date updates. Activity state may recalculate.</div>
+        </div>
+
+        <div class="test-step">
+          <div class="test-label">Test 9 — AI Recommendation</div>
+          <p>View any member's detail page. Scroll to the AI Suggested Next Step section and click the button.</p>
+          <div class="expected">Expected: A recommendation is displayed. It is clearly marked as simulated and requires human review. No commercial intent is inferred.</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initPage('Help & Testing');
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      const helpNav = document.getElementById('nav-help');
+      if (helpNav) helpNav.classList.add('active');
+    });
+  </script>
+</body>
+</html>

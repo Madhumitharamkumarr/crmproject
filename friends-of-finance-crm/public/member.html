@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Profile — Friends of Finance CRM</title>
+  <meta name="description" content="View individual member profile and activity history. Fictional demo data." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main-content">
+    <header class="topbar" id="topbar"></header>
+
+    <main class="page-content" id="page-body">
+      <div class="loading-overlay"><div class="spinner"></div> Loading member profile…</div>
+    </main>
+  </div>
+
+  <!-- Add Activity Modal -->
+  <div class="modal-overlay" id="activity-modal" style="display:none;">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Activity</h3>
+        <button class="modal-close" onclick="closeActivityModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-info" style="margin-bottom:16px;font-size:12.5px;">
+          All activities are fictional records for academic demonstration only. They do not represent real community interactions.
+        </div>
+        <form class="form-grid" id="activity-form" onsubmit="submitActivity(event)">
+          <div class="form-group">
+            <label for="act-type">Activity Type *</label>
+            <select id="act-type" required>
+              <option value="">Select type…</option>
+              <option value="Question">Question</option>
+              <option value="Post">Post</option>
+              <option value="Comment">Comment</option>
+              <option value="Reply">Reply</option>
+              <option value="Resource Interaction">Resource Interaction</option>
+              <option value="Discussion Participation">Discussion Participation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="act-space">Community Space *</label>
+            <select id="act-space" required>
+              <option value="">Select space…</option>
+              <option value="Ask Finance Peers">Ask Finance Peers</option>
+              <option value="Finance Workflows">Finance Workflows</option>
+              <option value="Tools &amp; Systems">Tools &amp; Systems</option>
+              <option value="Career &amp; Compensation">Career &amp; Compensation</option>
+              <option value="Water Cooler">Water Cooler</option>
+              <option value="Interviews &amp; Stories">Interviews &amp; Stories</option>
+              <option value="Curated Jobs">Curated Jobs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="act-date">Date *</label>
+            <input type="date" id="act-date" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="act-desc">Description *</label>
+            <textarea id="act-desc" rows="3" placeholder="Brief description of the fictional activity…" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeActivityModal()">Cancel</button>
+        <button class="btn btn-primary" id="act-submit-btn" onclick="submitActivity(event)">Add Activity</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shared.js"></script>
+  <script src="js/member.js"></script>
+</body>
+</html>
